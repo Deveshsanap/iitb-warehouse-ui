@@ -1,0 +1,434 @@
+/* Warehouse Management System — plain CSS, mobile-first. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: #f4f5f7;
+  color: #1a1a1a;
+  line-height: 1.45;
+}
+
+a {
+  color: #0b5fff;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #999;
+  background: #fff;
+}
+
+button.primary {
+  background: #0b5fff;
+  border-color: #0b5fff;
+  color: #fff;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+input,
+select {
+  font: inherit;
+  padding: 0.5rem;
+  border: 1px solid #999;
+  border-radius: 6px;
+  width: 100%;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  background: #1f2937;
+  color: #fff;
+  padding: 0.75rem 1rem;
+}
+
+.topbar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+}
+
+.nav a {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.nav a:hover {
+  background: #374151;
+}
+
+.userbox {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.userbox button {
+  padding: 0.35rem 0.75rem;
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.page h1 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.notice {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin: 0.75rem 0;
+}
+
+.notice.success {
+  background: #dcfce7;
+  border: 1px solid #16a34a;
+}
+
+.notice.error {
+  background: #fee2e2;
+  border: 1px solid #dc2626;
+}
+
+.notice.info {
+  background: #dbeafe;
+  border: 1px solid #2563eb;
+}
+
+/* Login */
+.login-wrap {
+  max-width: 420px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.login-wrap .field {
+  margin-bottom: 1rem;
+}
+
+.demo-note {
+  margin-top: 1.25rem;
+  padding: 0.75rem;
+  background: #f3f4f6;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* Warehouse map */
+.map-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 760px) {
+  .map-layout {
+    grid-template-columns: 1fr 320px;
+    align-items: start;
+  }
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem;
+  font-size: 0.9rem;
+}
+
+.legend .swatch {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 3px;
+  margin-right: 0.35rem;
+  vertical-align: text-bottom;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  max-width: 560px;
+}
+
+.cell {
+  min-height: 72px;
+  border: 2px solid #9ca3af;
+  border-radius: 8px;
+  background: #fff;
+  padding: 0.4rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  text-align: center;
+}
+
+.cell .code {
+  font-weight: 700;
+}
+
+.cell .state {
+  font-size: 0.8rem;
+}
+
+.cell.free {
+  background: #dcfce7;
+  border-color: #16a34a;
+}
+
+.cell.occupied {
+  background: #fee2e2;
+  border-color: #dc2626;
+}
+
+.cell.transfer {
+  background: #fef3c7;
+  border-color: #d97706;
+  border-style: dashed;
+}
+
+.cell.selected {
+  outline: 3px solid #0b5fff;
+  outline-offset: 2px;
+}
+
+.cell:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+button.cell {
+  cursor: pointer;
+}
+
+.map-actions {
+  margin: 1rem 0;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.detail-panel {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.detail-panel dl {
+  margin: 0.5rem 0 1rem;
+}
+
+.detail-panel dt {
+  font-weight: 600;
+}
+
+.detail-panel dd {
+  margin: 0 0 0.5rem;
+}
+
+/* Dialog */
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 10;
+}
+
+.dialog {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.25rem;
+  width: 100%;
+  max-width: 440px;
+  margin-top: 4vh;
+}
+
+.dialog .field {
+  margin-bottom: 0.9rem;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+/* Tables / dashboard */
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-card .value {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.chart {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  height: 180px;
+  margin-top: 0.5rem;
+}
+
+.chart-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.chart-bar {
+  width: 100%;
+  max-width: 48px;
+  background: #dc2626;
+  border-radius: 4px 4px 0 0;
+  min-height: 2px;
+}
+
+.chart-bar.free {
+  background: #16a34a;
+}
+
+.chart-label {
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+th {
+  background: #f3f4f6;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.form-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.form-card .field {
+  margin-bottom: 0.9rem;
+  max-width: 360px;
+}
+
+.kv {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.kv dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  margin: 0;
+}
+
+.kv dt {
+  font-weight: 600;
+}
+
+.kv dd {
+  margin: 0;
+}
+
+.muted {
+  color: #555;
+  font-size: 0.9rem;
+}
