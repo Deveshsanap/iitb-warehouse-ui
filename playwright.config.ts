@@ -1,8 +1,7 @@
 import { defineConfig, devices } from '@playwright/test'
 
-// Day 1: config + wiring only. No test files yet (Day 2 / Mon 30 Nov).
-// `npm test` therefore reports "No tests found" instead of failing on config.
-// The evaluator starts the UI and API itself, so there is NO webServer here.
+// Playwright config. The evaluator starts the UI and API itself, so
+// there is NO webServer here.
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,

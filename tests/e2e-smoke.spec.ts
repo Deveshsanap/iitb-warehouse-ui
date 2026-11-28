@@ -1,7 +1,6 @@
-// Day 2 rehearsal spec — NOT the final submission suite (that is
-// curated on Mon 30 Nov). It exercises the live local UI + API end to
-// end in a real headless Chromium browser: technician load/unload
-// round-trip, role gating, and admin user actions.
+// End-to-end spec — part of the submission test suite. It exercises the
+// live local UI + API end to end in a real headless Chromium browser:
+// technician load/unload round-trip, role gating, and admin user actions.
 //
 // Credentials come from the evaluator-supplied EVAL_* variables when
 // present; the fallbacks are the documented local-dev defaults from
