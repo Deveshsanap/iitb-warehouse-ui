@@ -432,3 +432,37 @@ th {
   color: #555;
   font-size: 0.9rem;
 }
+
+/* Visually hidden but still announced (labels for per-row controls). */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.row-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.row-actions input[type='password'] {
+  width: 11rem;
+}
+
+button.danger {
+  border-color: #b91c1c;
+  color: #b91c1c;
+  background: #fff;
+}
+
+button.danger:hover:not(:disabled) {
+  background: #fef2f2;
+}

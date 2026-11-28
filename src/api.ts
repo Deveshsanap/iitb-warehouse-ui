@@ -210,6 +210,20 @@ export function createAdminUser(payload: {
   })
 }
 
+export function updateAdminUser(
+  id: number,
+  payload: { role?: Role; password?: string },
+): Promise<AdminUser> {
+  return apiFetch<AdminUser>(`/api/admin/users/${id}/`, {
+    method: 'PATCH',
+    body: JSON.stringify(payload),
+  })
+}
+
+export function deleteAdminUser(id: number): Promise<void> {
+  return apiFetch<void>(`/api/admin/users/${id}/`, { method: 'DELETE' })
+}
+
 export function checkHealth(): Promise<{ status: string }> {
   return apiFetch<{ status: string }>('/health/')
 }
